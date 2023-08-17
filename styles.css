@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* ### Primary */
+
+--Orange: hsla(26, 95%, 51%, 0.797);
+--Pale-orange: hsl(25, 100%, 94%);
+
+/* ### Neutral */
+
+--Very-dark-blue: hsl(220, 13%, 13%);
+--Dark-grayish-blue: hsl(219, 9%, 45%);
+--Grayish-blue: hsl(222, 11%, 69%);
+--Light-grayish-blue: hsl(232, 25%, 94%);
+--White: hsl(0, 0%, 100%);
+--Black-with-75per-opacity-for-lightbox-background: hsl(0, 0%, 0%);
+
+  --f-size-para: 16px;
+  
+}
+html,
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+.onClickOpacity{
+  opacity: 0.5;
+  border: 2px solid var(--Orange); 
+
+}
+#errorText{
+  color: red;
+  display: block;
+  position: absolute;
+  font-size: 0.6rem;
+  padding-top: 0.5rem;
+}
+.cartLabelTag{
+  padding:0.2rem 0.3rem;
+  border-radius: 7px;
+  background-color: var(--Orange);
+  font-size: 0.5rem;
+  position: absolute;
+  left:0.9rem;
+  bottom:1.4rem;
+  
+  display: none;
+
+}
+.showCartAmounLabel{
+  display: block;
+}
+
+.headerContainer{
+  padding-inline: 1rem;
+  
+}
+.navBarContainer{
+  display: flex;
+  flex-direction: row;
+  height:5rem;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.cartShowContainer{
+  position: absolute;
+  z-index: 2;
+  background-color: var(--White);
+  width: 19rem;
+  max-width:100%;
+  right: 2%;
+  top: 95%;
+  box-shadow: 0px 0px 2px 2px rgb(0,0,0,0.1);
+  padding: 1rem;
+  display: none;
+}
+.showCart{
+  display: block;
+}
+
+.cartContainerBody{
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.cartItem{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 3px 3px rgba(190, 186, 186, 0.2);
+  padding: 0.5rem 1rem;
+}
+#prizeQuantitySpan{
+  display: flex;
+  flex-direction: row;
+  gap:0.5rem
+  
+}
+#prizeQuantitySpan img{
+  height:0.8rem;
+  width:0.8rem;
+  margin-left: auto;
+}
+#boldPriceSpan{
+  font-weight: 700;
+
+}
+
+
+.imageContentContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  max-width: 100%;
+}
+.imageContentContainer img{
+  height: 2rem;
+  width: 2rem;
+  border-radius: 4px;
+}
+.checkoutButton{
+  display: none;
+  align-self: stretch;
+}
+.showCheckoutButton{
+  display: block;
+}
+.checkoutButton button{
+ padding: 0.7rem 2rem;
+ width: 100%;
+  background-color: var(--Orange);
+  color: var(--White);
+  font-weight: 700;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+}
+.contentContainerCardItem{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.contentContainerCardItem span{
+  font-size: 0.7rem;
+}
+
+
+.divider1{
+  border: 1px solid var(--Light-grayish-blue);
+}
+
+.leftContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  height:5rem;
+  align-items: center;
+
+
+}
+.barIconContainer{
+  cursor: pointer;
+  display: none;
+}
+.anchorTagsContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+
+}
+
+.anchorTagsContainer li a{
+  text-decoration: none;
+  color: var(--Grayish-blue);
+  display: flex;
+  align-items: center;
+  height: 5rem;
+}
+.anchorTagsContainer li a:hover,.anchorTagsContainer li a:active{
+  color: var(--Black-with-75per-opacity-for-lightbox-background);
+  border-bottom: 4px solid var(--Orange);
+
+}
+.anchorTagsContainer{
+  list-style: none;
+}
+.rightContainer{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+#avatarImage{
+  width: 2.6rem;
+  height: 2.6rem;
+}
+#avatarImage:hover,#avatarImage:active{
+  cursor: pointer;
+  border-radius: 1.5rem;
+  border: 2px solid var(--Orange);
+
+}
+#cartIcon{
+  width:1rem;
+  height: 1rem;
+}
+#cartIcon:hover,#cartIcon:active{
+  cursor: pointer;
+}
+
+.divider{
+  border: 1px solid var(--Light-grayish-blue);
+  margin-inline: 10%;
+}
+
+.mainBodyContainer{
+  display: flex;
+  flex-direction: row;
+
+}
+.leftPartBody,.popUpMenuButton{
+  padding: 1.5rem;
+  gap: 1rem;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightPartBody{
+  flex: 3;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+.contentContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 26.5rem;
+
+}
+.productThumbnailImages{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+
+}
+
+.productThumbnailImages img:hover{
+  cursor: pointer;
+  border: 2px solid var(--Orange); 
+  opacity: 0.5;
+}
+.ImageProductsContainer,.ImageProductsContainerPopUpMenu{
+  position: relative;
+}
+
+.ImageProductsContainer img{
+  width: 300px;
+  height: 300px;
+  border-radius:10px;
+  
+}
+.ArrowButton{
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--White);
+  border: none;
+  outline: none;
+  border-radius: 1.4rem;
+  display: none;
+}
+.popUpMenuButton{
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--White);
+  border: none;
+  outline: none;
+  border-radius: 1.4rem;
+
+}
+.ArrowButton:hover,.ArrowButton:active,.popUpMenuArrowButton:hover,.popUpMenuArrowButton:active{
+  cursor: pointer;
+}
+#prevArrow{
+  position: absolute;
+  top:43%;
+  left: 3%;
+}
+#nextArrow{
+  position: absolute;
+  right:3%;
+
+}
+
+.ArrowButton img{
+  height: 0.7rem;
+  width: 0.7rem;
+
+}
+#prevArrow img{
+  width: 0.7rem;
+  height:0.7rem;
+
+}
+
+.productThumbnailImages img{
+  width: 70px;
+  height: 70px;
+  border-radius:10px;
+
+}
+.priceContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+}
+#sneakerSpan{
+  color:var(--Orange);
+}
+
+#discountPercentage{
+  margin-left: 0.4rem;
+  color: var(--Orange);
+  background-color: var(--Pale-orange);
+  font-size: 13px;
+  padding: 0.1rem 0.2rem;
+  border-radius: 5px;
+}
+#actualPriceSpan{
+  font-size: 11px;
+  color: var(--Grayish-blue);
+  text-decoration: line-through;
+}
+.primary-Heading{
+  font-weight: 700;
+
+}
+.primary-Paragraph{
+  font-size: var(--f-size-para);
+  font-weight: 400;
+  color: var(--Dark-grayish-blue);
+
+}
+.inputButtonContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.inputContainer{
+  background-color: var(--White);
+  box-shadow: 0px 0px 2px 2px rgb(0,0,0,0.1);
+  border-radius: 6px;
+  /* padding: 0.5rem; */
+}
+.inputContainer button{
+  /* width: 2rem; */
+  padding:0.6rem;
+  background: transparent;
+  outline: none;
+  border:none;
+}
+.inputContainer button:hover,.inputContainer button:active{
+  cursor: pointer;
+  opacity: 0.5;
+}
+.inputContainer input{
+  width: 2.5rem;
+  padding: 0.6rem;
+  background: transparent;
+  outline: none;
+  border:none;
+}
+.buttonContainer button{
+  display: flex;
+  gap: 1rem;
+  padding: 0.7rem 2rem;
+  background-color: var(--Orange);
+  color: var(--White);
+  font-weight: 700;
+  outline: none;
+  border:none;
+  border-radius: 5px;
+  
+}
+.buttonContainer button:hover,.buttonContainer button:active{
+  cursor: pointer;
+  opacity: 0.5;
+
+}
+.buttonContainer button img{
+  height: 1rem;
+  width: 1rem;
+}
+
+.popUpMenuArrowButton{
+  display: block;
+}
+.mainPopUpContainer{
+  top: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 75%);
+  display: none;
+}
+.showMainPopUpMenu{
+  display: block;
+}
+.popUpMenu{
+  position: absolute;
+  right:38%;
+  top:15%;
+  z-index: 2;
+  
+   /* position: fixed;
+   top: 0px;
+   left: 0px;
+   background-color: rgba(0, 0, 0, 75%);
+   width: 100%;
+   height: 100%;
+   z-index: 2; */
+}
+#image-Container-pop-Up{
+  height:350px;
+  width:350px;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+
+}
+
+#prevPopUpArrow{
+  position: absolute;
+  left:-7%;
+  top:40%;
+
+}
+#nextPopUpArrow{
+  position: absolute;
+  right:-7%;
+  bottom: 55%;
+
+}
+#closeIcon{
+  position: absolute;
+  top: -7%;
+  right: 0;
+  height:1.3rem;
+  width:1.3rem;
+  cursor: pointer;
+}
+#closeIcon:hover{
+  color:var(--Orange);
+  background-color: var(--Orange);
+}
+.DrowerContainer{
+  position: fixed;
+  height: 100%;
+  top: 0;
+  z-index: 3;
+  box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.3);
+  padding: 1.5rem;
+  background-color: var(--White);
+  /* i will give width which i minus when setting my left position and when i show the drower when i make this left 0 in this case that minused value of left from width will be shown that is 250px */
+  width: 250px;
+  left: -250px;
+  transition: left 0.9s ease-in-out, opacity 0.9s ease-in-out;
+  display: none;
+
+}
+
+.showDrower{
+  display: block;
+  left:0;
+  opacity: 1; /* Set opacity to 1 when showing */
+  transition: left 0.9s ease-out, opacity 0.9s ease-out;
+
+
+}
+.contentContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.navTagsContainer{
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  gap: 1.3rem;
+
+}
+.navTagsContainer li a{
+  color:var(--Black-with-75per-opacity-for-lightbox-background);
+  font-weight: 700;
+  text-decoration: none;
+
+}
+.navTagsContainer li{
+  list-style: none;
+}
+
+.footerContainer{
+  margin-top: 2rem;
+  background-color: var(--Pale-orange);
+  color: black;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;  
+}
+/* .buttonContainer{
+  margin-bottom: 2rem;
+} */
+@media screen and (max-width:850px) {
+  .contentContainer{
+    width: auto;
+  }
+  .inputButtonContainer{
+    flex-direction: column;
+  }
+  .buttonContainer{
+    margin-bottom: 2rem;
+  }
+  
+}
+@media screen and (max-width:650px) {
+  .popUpMenu{
+    right: 29%;
+  }
+  #nextPopUpArrow{
+    bottom:50%;
+  }
+  #prevPopUpArrow {
+    top:37%;
+  }
+  .anchorTagsContainer{
+    display: none;
+  }
+  .productThumbnailImages{
+    display: none;
+  }
+  .showPopUpOnMobile{
+    display: block;
+  }
+  .ArrowButton{
+    display: block;
+  }
+  .barIconContainer{
+    display: block;
+  }
+  .leftContainer{
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .mainBodyContainer{
+    flex-direction: column;
+  }
+  .leftPartBody{
+    align-items: stretch; 
+    padding: 0rem;
+  }
+  .ImageProductsContainer img{
+    width: 100%;
+    border-radius: 0px; 
+  }
+  .contentContainer{
+    width: 37.5rem;
+  }
+  .priceContainer{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .inputContainer{
+    width: 80%;
+    
+  }
+  .inputContainer input{
+    width: 66%;
+    margin-right: 0.6rem;
+    padding: 0.9rem;
+
+  }
+  
+  .buttonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .buttonContainer button{
+    width: 80%;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  
+  
+}
+
+@media screen and (max-width:600px) {
+  .popUpMenu{
+    right:21%;
+  }
+  #nextPopUpArrow{
+    bottom:58%;
+  }
+  #prevPopUpArrow{
+    top:38%;
+  }
+  .footerContainer{
+    font-size: 0.6rem;
+  }
+
+
+  
+}
+@media screen and (max-width:500px) {
+  #image-Container-pop-Up{
+    height:270px;
+    width:270px;
+  
+  }
+  .productThumbnailImages img {
+    width: 60px;
+    height: 60px;
+}
+  .popUpMenu{
+    right: 16%;
+  }
+  #prevPopUpArrow{
+    top:35%;
+  }
+  #nextPopUpArrow {
+    bottom: 59%;
+    right: -7%;
+  }
+
+  
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
